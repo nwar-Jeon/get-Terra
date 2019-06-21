@@ -12,7 +12,7 @@
     <View android:layout_width="700dp" android:layout_height="700dp" app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
           android:background="@drawable/back_teamcolor_main"
-          android:id="@+id/applyteam_top_v2"
+          android:id="@+id/check_top_v"
           app:layout_constraintBottom_toTopOf="parent"
           app:layout_constraintHorizontal_bias="0.501"
           app:layout_constraintTop_toTopOf="parent">
@@ -23,7 +23,7 @@
               android:textColor="@android:color/white"
               android:id="@+id/check_answer_tv"
               android:textStyle="bold"
-              app:layout_constraintBottom_toBottomOf="@+id/applyteam_top_v2"
+              app:layout_constraintBottom_toBottomOf="@+id/check_top_v"
               app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
               app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
     <com.nwar.individual.get_terra.customView.CustomButton
@@ -37,5 +37,5 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/applyteam_top_v2"/>
+            app:layout_constraintTop_toBottomOf="@+id/check_top_v"/>
 </android.support.constraint.ConstraintLayout>

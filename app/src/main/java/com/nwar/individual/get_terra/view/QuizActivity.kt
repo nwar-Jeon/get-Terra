@@ -12,7 +12,7 @@ import com.nwar.individual.get_terra.customView.CustomButton
 class QuizActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val quiz = QuizInfo(0,"퀴즈 내용 입니다", "정답")
+        val quiz = QuizInfo(0,"퀴즈 내용 입니다", "answer")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
         val answer = findViewById<EditText>(R.id.quiz_inputanswer_et)
@@ -33,7 +33,18 @@ class QuizActivity : AppCompatActivity() {
 data class QuizInfo(val quizId : Int, val quizContent : String, val quizAnswer : String){
     fun isAnswerTrue(other: Any?): Boolean {
         if(other is String){
-            return other.equals(quizContent)
+            return other.equals(quizAnswer)
+        }
+        return false
+    }
+
+    override fun hashCode(): Int {
+        return quizId + super.hashCode()
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if(other is QuizInfo){
+            return quizId == other.quizId
         }
         return false
     }
