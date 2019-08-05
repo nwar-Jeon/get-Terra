@@ -43,18 +43,18 @@
             android:text="Sign Up"
             android:layout_width="250dp"
             android:layout_height="50dp"
-            android:id="@+id/login_signUp_tv"
+            android:id="@+id/login_signUp_btn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/style_circle_main"
             app:layout_constraintHorizontal_bias="0.501" android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/login_login_tv"/>
+            app:layout_constraintBottom_toTopOf="@+id/login_login_btn"/>
     <com.nwar.individual.get_terra.customView.CustomButton
             android:text="Sign In"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:background="@drawable/style_circle_main"
-            android:id="@+id/login_login_tv"
+            android:id="@+id/login_login_btn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="70dp"

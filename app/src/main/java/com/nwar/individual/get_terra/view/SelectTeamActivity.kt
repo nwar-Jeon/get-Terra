@@ -12,35 +12,34 @@ import com.nwar.individual.get_terra.customView.CustomButton
 
 class SelectTeamActivity : AppCompatActivity(){
 
+    val backGroundTop by lazy { findViewById<View>(R.id.selteam_top_v) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_team)
         findViewById<CustomButton>(R.id.selteam_blue_btn)
-            .setOnColor(Color.WHITE, ContextCompat.getColor(this,R.color.blue))
-            .setOnClickListener {
-                onClick(R.color.blue)
-            }
+            .init(R.color.blue)
         findViewById<CustomButton>(R.id.selteam_green_btn)
-            .setOnColor(Color.WHITE, ContextCompat.getColor(this,R.color.green))
-            .setOnClickListener {
-                onClick(R.color.green)
-            }
+            .init(R.color.green)
         findViewById<CustomButton>(R.id.selteam_violet_btn)
-            .setOnColor(Color.WHITE, ContextCompat.getColor(this,R.color.violet))
-            .setOnClickListener {
-                onClick(R.color.violet)
-            }
+            .init(R.color.violet)
         findViewById<CustomButton>(R.id.selteam_yellow_btn)
-            .setOnColor(Color.WHITE, ContextCompat.getColor(this,R.color.yellow))
-            .setOnClickListener {
-                onClick(R.color.yellow)
-            }
-        findViewById<View>(R.id.selteam_top_v).startAnimation(AnimationUtils.loadAnimation(this,R.anim.head_showin_anim))
+            .init(R.color.yellow)
+        backGroundTop.startAnimation(AnimationUtils.loadAnimation(this,R.anim.head_showin_anim))
     }
     fun onClick(color : Int){
+        backGroundTop.startAnimation(AnimationUtils.loadAnimation(this,R.anim.head_showout_anim))
+
         val intent = Intent(this, ApplySelectTeamActivity::class.java)
         intent.putExtra("teamColor", ContextCompat.getColor(this,color))
-        findViewById<View>(R.id.selteam_top_v).startAnimation(AnimationUtils.loadAnimation(this,R.anim.head_showout_anim))
         startActivity(intent)
+
+    }
+
+    fun CustomButton.init(backColor : Int){
+        this.setOnColor(Color.WHITE, ContextCompat.getColor(this@SelectTeamActivity, backColor))
+        this.setOnClickListener {
+            onClick(backColor)
+        }
     }
 }

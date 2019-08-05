@@ -22,10 +22,10 @@ class ApplySelectTeamActivity : AppCompatActivity(), Presenter.ApplySelectTeamVi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_apply_select_team)
+
         var drawableHead = ContextCompat.getDrawable(this,R.drawable.back_teamcolor_main)
         var drawableBody = ContextCompat.getDrawable(this,R.drawable.style_borderline_rectangle_apply_team)
         val teamColor = intent.getIntExtra("teamColor", 0)
-
 
         drawableHead?.setColorFilter(teamColor, PorterDuff.Mode.SRC_ATOP)
         drawableBody?.setColorFilter(teamColor, PorterDuff.Mode.SRC_ATOP)
